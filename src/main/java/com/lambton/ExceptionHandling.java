@@ -4,7 +4,7 @@ public class ExceptionHandling
 {
     public static void main(String[] args) {
         int a=100;
-        int b=10;
+        int b=0;
         int c;
 
         int x[]={1,2,3};
@@ -12,7 +12,7 @@ public class ExceptionHandling
         System.out.println("START");
 
         try {
-            x[4]=1000;
+            x[2]=1000;
             c = a / b;
             System.out.println("c:" +c);
         }
@@ -30,6 +30,10 @@ public class ExceptionHandling
         catch(Exception e)
         {
             System.out.println(e.toString());
+        }
+
+        finally {
+            System.out.println("i am in finally block");
         }
 
 
