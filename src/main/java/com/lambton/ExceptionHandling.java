@@ -9,9 +9,13 @@ public class ExceptionHandling
 
         int x[]={1,2,3};
 
+        Student s1=new Student(1,"ankita jain");
+
         System.out.println("START");
 
         try {
+            System.out.println(s1.toString());
+
             x[2]=1000;
             c = a / b;
             System.out.println("c:" +c);
@@ -36,7 +40,10 @@ public class ExceptionHandling
             System.out.println("i am in finally block");
         }
 
+       System.out.println("END");
+        s1=null;
+        System.gc();
 
-        System.out.println("END");
     }
+
 }
