@@ -4,8 +4,9 @@ public class ExceptionHandling
 {
     public static void main(String[] args) {
         int a=100;
-        int b=0;
+        int b=10;
         int c;
+        String name="hello";
 
         int x[]={1,2,3};
 
@@ -19,16 +20,31 @@ public class ExceptionHandling
             x[2]=1000;
             c = a / b;
             System.out.println("c:" +c);
+
+            if (b!=10)
+            {
+                throw new ArithmeticException("do not divide by 5");
+            }
+
+            if(name.length()<10)
+            {
+                throw new NameLengthException("name should be of length 10");
+            }
         }
 
         catch(ArithmeticException ae)
         {
-            System.out.println("Value of b=0, Divisible by zero error");
+            System.out.println(ae.toString());
+           // System.out.println("Value of b=0, Divisible by zero error");
         }
 
         catch(ArrayIndexOutOfBoundsException aob)
         {
             System.out.println("Array x is trying to access index not available");
+        }
+        catch(NameLengthException nae)
+        {
+            System.out.println(nae.toString());
         }
 
         catch(Exception e)
