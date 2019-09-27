@@ -24,6 +24,19 @@ public class Student {
     public String toString() {
         return super.toString();
     }
+
+    public void display() throws NameLengthException
+    {
+        if(this.name.length()<10)
+        {
+            throw new NameLengthException("name of small length");
+        }
+        else
+        {
+            System.out.println(StudentId);
+            System.out.println(name);
+        }
+    }
 }
 
 
